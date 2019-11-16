@@ -15,9 +15,9 @@
         {{--<a class="btn btn-sm btn-outline-primary" href="/posts/{{$post->id}}/upvote/">Upvote this!</a>--}}
     {{--@endif--}}
 {{--</div><!-- /.blog-post -->--}}
-<div class="song">
-    <img src="{{$song->album->images[2]->url}}">
-    <a href="{{$song->external_urls->spotify}}">{{$song->name}}</a>
+<div class="album">
+    <img src="{{$album->images[2]->url}}">
+    <a href="{{$album->external_urls->spotify}}">{{$album->name}}</a>
 
 
 </div>
