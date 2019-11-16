@@ -26,9 +26,24 @@
 <div class="full-height">
     <div class="result">
         Your Search Term Was: <b>{{$searchTerm}}</b>
-        @foreach($songs as $song)
-            @include('spotify.song')
-        @endforeach
+        <div class="songList">
+            Songs:
+            @foreach($songs->items as $song)
+                @include('spotify.song')
+            @endforeach
+        </div>
+        <div class="ArtistList">
+            Artists:
+            @foreach($artists->items as $artist)
+                @include('spotify.song')
+            @endforeach
+        </div>
+        <div class="songList">
+            Albums
+            @foreach($albums->items as $album)
+                @include('spotify.song')
+            @endforeach
+        </div>
     </div>
 </div>
 </body>
