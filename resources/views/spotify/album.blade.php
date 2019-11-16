@@ -1,22 +1,9 @@
-{{--<div class="blog-post">--}}
-    {{--<h2 class="blog-post-title">--}}
-        {{--<a href="/posts/{{$post->id}}">--}}
-            {{--{{ $post->title }}--}}
-        {{--</a>--}}
-    {{--</h2>--}}
-    {{--<h7 class="text-info">Post score: {{$post->aura}} <br></h7>--}}
-    {{--<p class="blog-post-meta">--}}
-        {{--By <b>{{$post->user->name}} the {{$post->user->title}}</b> on--}}
-        {{--{{$post->created_at->toFormattedDateString()}}--}}
-    {{--</p>--}}
-    {{--{{$post->body}}--}}
-    {{--<br>--}}
-    {{--@if (Auth::check())--}}
-        {{--<a class="btn btn-sm btn-outline-primary" href="/posts/{{$post->id}}/upvote/">Upvote this!</a>--}}
-    {{--@endif--}}
-{{--</div><!-- /.blog-post -->--}}
 <div class="album">
-    <img src="{{$album->images[2]->url}}">
+        @if ($song->album->images)
+    <img src="{{$album->images[0]->url}}" height="64" width="64">
+        @else {{-- We don't have a picture, so grab a placeholder.--}}
+    <img src="https://via.placeholder.com/64">
+        @endif
     <a href="{{$album->external_urls->spotify}}">{{$album->name}}</a>
 
 
