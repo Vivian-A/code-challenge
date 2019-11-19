@@ -118,6 +118,11 @@ class SpotifyAPI
         $json = $this->sendIdRequest('/tracks/', $id);
         return $json;
     }
+    public function albumInfo(string $id)
+    {
+        $json = $this->sendIdRequest('/albums/', $id);
+        return $json;
+    }
     public function extraTrackInfo(string $id)
     {
         $json = $this->sendIdRequest('/audio-features/', $id);

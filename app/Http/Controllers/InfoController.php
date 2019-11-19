@@ -32,7 +32,7 @@ class InfoController
     public function albumInfo(Request $request, $id)
     {
         $api = new SpotifyAPI();
-        $albumInfo = $api->trackInfo($id);
+        $albumInfo = $api->albumInfo($id);
         return view('spotify/info/album', ['albumInfo' => $albumInfo]);
     }
 }
