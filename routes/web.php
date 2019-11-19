@@ -13,3 +13,7 @@
 
 Route::get('/', "SearchController@index");
 Route::post('/search', "SearchController@search");
+Route::get('/song/{id}', "InfoController@trackInfo");
+Route::get('/album/{id}', "InfoController@albumInfo");
+Route::get('/artist/{id}', "InfoController@artistInfo");
+

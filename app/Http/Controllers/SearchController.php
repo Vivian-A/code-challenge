@@ -36,9 +36,5 @@ class SearchController extends Controller
 
         return view('search', ['searchTerm' => $query, 'songs' => $songResults, 'albums' => $albumResults, 'artists' => $artistResults]);
     }
-    public function info(Request $request)
-    {
-
-    }
 
 }
