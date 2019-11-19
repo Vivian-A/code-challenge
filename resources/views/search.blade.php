@@ -29,19 +29,19 @@
         <div class="songList">
             Songs:
             @foreach($songs->items as $song)
-                @include('spotify.song')
+                @include('spotify.search.song')
             @endforeach
         </div>
         <div class="ArtistList">
             Artists:
             @foreach($artists->items as $artist)
-                @include('spotify.artist')
+                @include('spotify.search.artist')
             @endforeach
         </div>
         <div class="songList">
             Albums
             @foreach($albums->items as $album)
-                @include('spotify.album')
+                @include('spotify.search.album')
             @endforeach
         </div>
     </div>

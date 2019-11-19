@@ -5,6 +5,4 @@
     <img src="https://via.placeholder.com/64">
         @endif
     <a href="{{$album->external_urls->spotify}}">{{$album->name}}</a>
-
-
 </div>
