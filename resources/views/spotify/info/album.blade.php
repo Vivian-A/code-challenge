@@ -5,6 +5,8 @@
         <img src="https://via.placeholder.com/256"/>
     @endif
         <p>{{$albumInfo->name}}</p>
+        {{--TODO: Allow for multiple artists--}}
+        <a href="{{route('artistInfo',['id' => $albumInfo->artists[0]->id])}}">{{$albumInfo->artists[0]->name}}</a>
         <p>Spotify ID: {{$albumInfo->id}}</p>
         <p>Popularity: {{$albumInfo->popularity}}</p>
         <p>Release Date: {{$albumInfo->release_date}}</p>

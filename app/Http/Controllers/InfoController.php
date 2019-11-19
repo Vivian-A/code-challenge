@@ -35,4 +35,10 @@ class InfoController
         $albumInfo = $api->albumInfo($id);
         return view('spotify/info/album', ['albumInfo' => $albumInfo]);
     }
+    public function artistInfo(Request $request, $id)
+    {
+        $api = new SpotifyAPI();
+        $artistInfo = $api->artistInfo($id);
+        return view('spotify/info/artist', ['artistInfo' => $artistInfo]);
+    }
 }

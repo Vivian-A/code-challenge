@@ -4,5 +4,5 @@
     @else {{-- We don't have a picture, so grab a placeholder.--}}
         <img src="https://via.placeholder.com/64">
     @endif
-    <a href="{{$song->external_urls->spotify}}">{{$song->name}}</a>
+        <a href="{{route('trackInfo',['id' => $song->id])}}">{{$song->name}}</a>
 </div>

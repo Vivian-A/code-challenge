@@ -4,6 +4,7 @@
     @else {{-- We don't have a picture, so grab a placeholder.--}}
         <img src="https://via.placeholder.com/256"/>
     @endif
+        <a href="{{route('albumInfo',['id' => $trackInfo->album->id])}}">{{$trackInfo->album->name}}</a>
         <p>Name: {{$trackInfo->name}}</p>
         <p>Popularity: {{$trackInfo->popularity}}</p>
         <p>Disc Number: {{$trackInfo->disc_number}}</p>

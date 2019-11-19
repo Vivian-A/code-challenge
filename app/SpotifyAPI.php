@@ -6,7 +6,7 @@ namespace App;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
-
+// TODO: Split this into multiple classes. It's getting a tad large.
 class SpotifyAPI
 {
     protected $clientID;
@@ -70,7 +70,6 @@ class SpotifyAPI
     public function sendIdRequest(string $endpoint, string $data)
     {
         $client = new Client();
-        // IMPROVEMENT: make method a variable thats changeable, but for now we only need GET which is easier to deal with
 
         $request = $client->request('GET', 'https://api.spotify.com/v1' . $endpoint. $data, [
             'headers' => [
@@ -113,14 +112,12 @@ class SpotifyAPI
             ]);
         return $json->tracks;
     }
+    ///
+    ///  EXTRA INFO
+    ///
     public function trackInfo(string $id)
     {
         $json = $this->sendIdRequest('/tracks/', $id);
-        return $json;
-    }
-    public function albumInfo(string $id)
-    {
-        $json = $this->sendIdRequest('/albums/', $id);
         return $json;
     }
     public function extraTrackInfo(string $id)
@@ -132,5 +129,15 @@ class SpotifyAPI
         }
         return $json;
 
+    }
+    public function albumInfo(string $id)
+    {
+        $json = $this->sendIdRequest('/albums/', $id);
+        return $json;
+    }
+    public function artistInfo(string $id)
+    {
+        $json = $this->sendIdRequest('/artists/', $id);
+        return $json;
     }
 }
